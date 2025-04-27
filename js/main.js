@@ -43,13 +43,15 @@ function setResolution(){
 
     const newNumberOfSquares = parseInt(userInput);
 
-    if(newNumberOfSquares <= 100 && newNumberOfSquares >= 0){
-        numberOfSquares = newNumberOfSquares;
-        replaceGrid();
-    }else if(newNumberOfSquares >= 100){
+    if(newNumberOfSquares >= 100){
         alert('ERROR: Resolution cannot be over 100.');
     }else if(newNumberOfSquares < 0){
         alert('ERROR: Resolution cannot be under 0.');
+    }else if(Number.isNaN(newNumberOfSquares)){
+        alert('ERROR: Resolution has to be an integer.')
+    }else{
+        numberOfSquares = newNumberOfSquares;
+        replaceGrid();
     }
 }
 
