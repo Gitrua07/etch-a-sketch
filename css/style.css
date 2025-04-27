@@ -1,5 +1,8 @@
-*{
+body{
     display: flex;
+    margin: 40px 20px;
+    flex-direction: column;
+    flex:0;
 }
 
 #container{
@@ -30,8 +33,10 @@
 }
 
 button{
+    display: flex;
     margin: 5px 5px 10px 0px;
-    padding: 3px 5px;
+    padding: 4px 10px 3px 15px;
+    height: 30px;
+    width: 150px;
     font-family: Helvetica, sans-serif;
-
 }
