@@ -1,4 +1,5 @@
 body{
+    background-color: rgb(246, 222, 203);
     display: flex;
     margin: 40px 20px;
     flex-direction: column;
@@ -13,6 +14,9 @@ body{
     height: 960px;
     justify-content: center;
     align-items: center;
+    border: 3px solid rgb(218, 183, 162);
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .red-pink{
@@ -40,6 +44,6 @@ button{
     padding: 4px 10px 3px 15px;
     height: 30px;
     width: 150px;
-    font-family: Helvetica, sans-serif;
+    font-family: "Brush Script MT", sans-serif;
     border-radius: 10px;
 }

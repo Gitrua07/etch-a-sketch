@@ -14,7 +14,7 @@ function createGrid(){
 
     for(let i = 0; i < resolution; i++){
         const square = document.createElement('div');
-        square.classList.add('red-pink');
+        square.classList.add('yellow-red');
         square.style.width = `${squareSize}px`;
         square.style.height = `${squareSize}px`;
         div.appendChild(square);
