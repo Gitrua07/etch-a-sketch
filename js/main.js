@@ -1,11 +1,16 @@
+//Initializes grid size, selected HTML elements, and number of squares per side
 const GRID_SIZE = 960;
 const div = document.querySelector('#container');
 const btn = document.querySelector('button');
 let numberOfSquares = 10;
 
+/**
+ * createGrid():
+ * Creates a grid based on the numberOfSquares variable and GRID_SIZE.
+ */
 function createGrid(){
-    let resolution = numberOfSquares * numberOfSquares;
-    let squareSize = GRID_SIZE/numberOfSquares;
+    const resolution = numberOfSquares * numberOfSquares;
+    const squareSize = GRID_SIZE/numberOfSquares;
 
     for(let i = 0; i < resolution; i++){
         const square = document.createElement('div');
@@ -16,11 +21,21 @@ function createGrid(){
     }
 }
 
+/**
+ * replaceGrid():
+ * Replaces current grid with a grid with a new resolution.
+ */
 function replaceGrid(){
     div.innerHTML = '';
     createGrid();
 }
 
+/**
+ * setResolution():
+ * Sets a new resolution based on the user input. 
+ * Will output and cancel resolution change if resolution
+ * cannot exceed 100 or go under 0.
+ */
 function setResolution(){
     let userInput = prompt('Input the new resolution. (Max 100 squares)');
 
@@ -38,6 +53,8 @@ function setResolution(){
     }
 }
 
+//Event listener activates if mouse hovers over square element in grid.
+//Changes the square's colour based on current colour.
 div.addEventListener('mouseover', (event) => {
     let divTarget = event.target;
    if(divTarget.classList.contains('red-pink')){
@@ -58,5 +75,6 @@ div.addEventListener('mouseover', (event) => {
    }
 });
 
-btn.addEventListener('click', setResolution)
+//Event listener activates if user clicks the 'Change Resolution' button.
+btn.addEventListener('click', setResolution);
 createGrid();
