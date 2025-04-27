@@ -43,7 +43,7 @@ function setResolution(){
 
     const newNumberOfSquares = parseInt(userInput);
 
-    if(newNumberOfSquares >= 100){
+    if(newNumberOfSquares > 100){
         alert('ERROR: Resolution cannot be over 100.');
     }else if(newNumberOfSquares < 0){
         alert('ERROR: Resolution cannot be under 0.');
