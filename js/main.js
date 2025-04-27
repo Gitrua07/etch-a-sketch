@@ -1,8 +1,11 @@
+const GRID_SIZE = 960;
+const div = document.querySelector('#container');
+const btn = document.querySelector('button');
 let numberOfSquares = 10;
 
 function createGrid(){
     let resolution = numberOfSquares * numberOfSquares;
-    let squareSize = 960/numberOfSquares;
+    let squareSize = GRID_SIZE/numberOfSquares;
 
     for(let i = 0; i < resolution; i++){
         const square = document.createElement('div');
@@ -19,10 +22,13 @@ function replaceGrid(){
 }
 
 function setResolution(){
-    let newNumberOfSquares = prompt('Input the new resolution. (Max 100 squares)');
-    if(newNumberOfSquares <= 100 && newNumberOfSquares >= 0 && newNumberOfSquares != null &&
-        newNumberOfSquares.trim() != ''
-    ){
+    let userInput = prompt('Input the new resolution. (Max 100 squares)');
+
+    if(userInput == null || userInput.trim() === '') return;
+
+    const newNumberOfSquares = parseInt(userInput);
+
+    if(newNumberOfSquares <= 100 && newNumberOfSquares >= 0){
         numberOfSquares = newNumberOfSquares;
         replaceGrid();
     }else if(newNumberOfSquares >= 100){
@@ -31,9 +37,6 @@ function setResolution(){
         alert('ERROR: Resolution cannot be under 0.');
     }
 }
-
-
-const div = document.querySelector('#container');
 
 div.addEventListener('mouseover', (event) => {
     let divTarget = event.target;
@@ -55,6 +58,5 @@ div.addEventListener('mouseover', (event) => {
    }
 });
 
-const btn = document.querySelector('button');
 btn.addEventListener('click', setResolution)
 createGrid();
