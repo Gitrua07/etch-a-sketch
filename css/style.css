@@ -1,0 +1,37 @@
+*{
+    display: flex;
+}
+
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 960px;
+    height: 960px;
+}
+
+.red-pink{
+    background-color: rgb(255,64,98);
+}
+
+.light-pink{
+    background-color: rgb(255,156,152);
+}
+
+.yellow-red{
+    background-color: rgb(250,205,168);
+}
+
+.light-green{
+    background-color: rgb(200,201,168);
+}
+
+.pastel-green{
+    background-color: rgb(129,176,155);
+}
+
+button{
+    margin: 5px 5px 10px 0px;
+    padding: 3px 5px;
+    font-family: Helvetica, sans-serif;
+
+}
